@@ -1,0 +1,19 @@
+<div class="prose">Buenas tardes: {{nombre.value}}  </div>
+<input type="text" #nombre>
+<button (click)="cargarNombre(nombre.value)">actualizar</button>
+
+
+
+<div> Online : {{empresa.value}}</div>
+Empresa :  <input type="text" #empresa (keyup)="0" [disabled]="habilitarCuadro">
+
+<input type="radio" name="registro" value="si" (click)="habilitarCheck($event)">
+<input type="radio" name="registro" value="no" (click)="habilitarCheck($event)">
+
+<br>
+<br>
+<br>
+
+<div>Empresa :   {{color}}</div>
+<!--<input type="text" (input)="escribrirColor($event)">-->
+<input type="text" [(ngModel)]="color">

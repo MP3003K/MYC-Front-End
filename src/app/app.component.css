@@ -1,0 +1,27 @@
+.cover {
+  height: 130px;
+  width: 130px;
+  background-image: url("src/assets/img/logo1.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.sidebar {
+  /*position: fixed;
+  transition: all 0.3s ease;*/
+  background-color: #111827;
+  width: 280px;
+  height: 100vh;
+}
+/*.sidebar.close ~ .home{
+    left: 280px;
+}*/
+.home {
+  /*position: absolute;
+  transition: all 0.3s ease;*/
+  height: 100vh;
+  width: calc(100% - 280px);
+
+}
+
+
