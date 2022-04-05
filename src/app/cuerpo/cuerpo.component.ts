@@ -6,30 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cuerpo.component.css']
 })
 export class CuerpoComponent implements OnInit {
-
 // * valores
-habilitarCuadro= false;
-color="amarillo";
-
+titulo= 'Registro de Usuarios';
+mensaje='mensaje';
+registrado=false;
+nombre:string="";
+apellido:string="";
+entradas: any;
 // *  funciones
-cargarNombre(nombre:String){
-}
-habilitarCheck(event: Event){
-if((<HTMLInputElement>event.target).value=="si"){
-  this.habilitarCuadro=true;
-}else{
-this.habilitarCuadro=false;
-}
+
+registarUsuarios(){
+  this.registrado=true;
+  this.mensaje="Registrado con exito";
 }
 
-escribrirColor(event:Event){
-this.color=(<HTMLInputElement>event.target).value;
+constructor() {
+  this.entradas=[
+    {titulo:"Java cada dia mas presente"},
+    {titulo:"Pyton cada dia mas presente"},
+    {titulo:"JavaScrip cada dia mas presente"},
+    {titulo:"LetGo cada dia mas presente"},
+  ]
 }
-
-AlertCheck(){
-  alert( " Alerta prueba");
-}
-constructor() { }
 
   ngOnInit(): void {
   }
