@@ -12,6 +12,7 @@ import { BarraSuperiorComponent } from './barra-superior/barra-superior.componen
 import { CuerpoComponent } from './cuerpo/cuerpo.component';
 import { FormsModule } from '@angular/forms';
 import { CuerpoHijoCComponent } from './cuerpo-hijo-c/cuerpo-hijo-c.component';
+import { ServicioBaseService } from './servicio-base.service';
 
 // Fin Service
 @NgModule({
@@ -28,7 +29,8 @@ import { CuerpoHijoCComponent } from './cuerpo-hijo-c/cuerpo-hijo-c.component';
     FormsModule
   ],
   providers: [
-    CargarScriptsServiceService
+    CargarScriptsServiceService,
+    ServicioBaseService
   ],
   bootstrap: [AppComponent]
 })

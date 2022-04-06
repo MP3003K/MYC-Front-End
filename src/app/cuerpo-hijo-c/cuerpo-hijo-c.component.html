@@ -1,17 +1,19 @@
+<br>
+<div class="bg-black h-96 w-64 m-2">
 
-<br>
-Votante:   {{Hvotante}}
-<br>
-<br>
+  <label for="nombre">Nombre</label>
+  <input type="text" name="nombre" [(ngModel)]="cuadroNombre">
 
-<div class="container m-5 flex">
-  <div class=" h-8 w-10 bg-red-600 items-center  cursor-pointer" (click)="votar(false)">
-    <div class="text-center pt-1">No</div>
-  </div>
-  <div class="w-2"></div>
-  <div class=" h-8 w-10 bg-green-500 items-center  cursor-pointer" (click)="votar(true)">
-    <div class="text-center pt-1">Si</div>
-  </div>
+  <label for="Apellido">Apellido</label>
+  <input type="text" name="Apellido" [(ngModel)]="cuadroApellido">
+
+  <label for="Cargo">Cargo :</label>
+  <input type="text" name="Cargo" [(ngModel)]="cuadroCargo">
+
+  <label for="Salario">Salario</label>
+  <input type="text" name="Salario" [(ngModel)]="cuadroSalario">
+
 </div>
-
-
+<br>
+<br>
+<button class="h-12 w-12" (click)="agregarEmpleado()"> Agregar</button>

@@ -1,5 +1,6 @@
 import { Empleado } from './../cuerpo/persona.model';
 import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EmpleadosService } from '../empleados.service';
 
 @Component({
   selector: 'app-cuerpo-hijo-c',
@@ -7,17 +8,19 @@ import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./cuerpo-hijo-c.component.css']
 })
 export class CuerpoHijoCComponent implements OnInit {
- @Input()Hvotante='';
-@Output() Hvotar = new EventEmitter<boolean>();
+
+  cuadroNombre:string="";
+  cuadroApellido:string="";
+  cuadroCargo:string="";
+  cuadroSalario:number=0;
+
+  agregarEmpleado(){
+    let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    this.empleadoService.agregarEmpreadoServicio(miEmpleado);
+  }
 
 
-voto:boolean;
-
-votar(res:boolean){
-this.voto=true;
-this.Hvotar.emit(res);
-}
-  constructor() { }
+  constructor(private empleadoService: EmpleadosService) { }
 
   ngOnInit(): void {
   }

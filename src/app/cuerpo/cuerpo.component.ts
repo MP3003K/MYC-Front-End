@@ -1,4 +1,6 @@
+import { EmpleadosService } from './../empleados.service';
 import { Component, OnInit } from '@angular/core';
+import { ServicioBaseService } from '../servicio-base.service';
 import { Empleado } from './persona.model';
 
 @Component({
@@ -7,22 +9,24 @@ import { Empleado } from './persona.model';
   styleUrls: ['./cuerpo.component.css']
 })
 export class CuerpoComponent implements OnInit {
-  votantes= ['Narco', 'Celeritas', 'Bombasto'];
-  Afavor:number=0;
-  EnContra:number=0;
 
-  votar(respuesta:boolean){
-        if(respuesta){
-      this.Afavor++;
-    }else{
-      this.EnContra++;
-    }
 
+
+  cuadroNombre:string="";
+  cuadroApellido:string="";
+  cuadroCargo:string="";
+  cuadroSalario:number=0;
+
+  empleados:Empleado[]=[];
+
+  agregarEmpleado(){
+    let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    this.empleadoService.agregarEmpreadoServicio(miEmpleado);
   }
 
 
-  constructor() {
-
+  constructor(private empleadoService: EmpleadosService) {
+    this.empleados=this.empleadoService.empleados;
   }
   ngOnInit(): void {
   }
