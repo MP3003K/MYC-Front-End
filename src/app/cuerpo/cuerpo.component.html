@@ -1,29 +1,13 @@
+<div class="container text-black">
 
-<div class="container">
-        <form >
-          <br>
-<label for="nombre">Nombre:</label>
-<input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="cuadroNombre">
-<br>
 
-<label for="apellido">Apellido:</label>
-<input type="text" name="apellido" id="apellido" placeholder="Apellido" [(ngModel)]="cuadroApellido">
-<br>
 
-<label for="cargo">Cargo:</label>
-<input type="text" name="cargo" id="cargo" placeholder="Cargo" [(ngModel)]="cuadroCargo">
-<br>
+  <br>
+  <div>A favor :  {{Afavor}}</div>
+  <br>
+  <div>En Contra :  {{EnContra}}</div>
 
-<label for="salario">Salario:</label>
-<input type="text" name="salario" id="salario" placeholder="Salario" [(ngModel)]="cuadroSalario">
 
-</form>
-<br>
-<br>
-<button type="submit" value="" (click)="agregarEmpleado()">
-  agregar
-</button>
-<br>
-<br>
-<app-cuerpo-hijo-c *ngFor="let empleado of empleados; let i=index" [empleadoDeLista]="empleado" [indice]="i" ></app-cuerpo-hijo-c>
-
+<app-cuerpo-hijo-c  *ngFor="let votante of votantes"
+[Hvotante]=votante (Hvotar)="votar($event)">
+</app-cuerpo-hijo-c>

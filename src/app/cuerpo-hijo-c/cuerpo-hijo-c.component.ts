@@ -1,5 +1,5 @@
 import { Empleado } from './../cuerpo/persona.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cuerpo-hijo-c',
@@ -7,9 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cuerpo-hijo-c.component.css']
 })
 export class CuerpoHijoCComponent implements OnInit {
- @Input()empleadoDeLista: Empleado;
- @Input()indice:number;
+ @Input()Hvotante='';
+@Output() Hvotar = new EventEmitter<boolean>();
 
+
+voto:boolean;
+
+votar(res:boolean){
+this.voto=true;
+this.Hvotar.emit(res);
+}
   constructor() { }
 
   ngOnInit(): void {

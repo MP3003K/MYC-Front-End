@@ -7,22 +7,20 @@ import { Empleado } from './persona.model';
   styleUrls: ['./cuerpo.component.css']
 })
 export class CuerpoComponent implements OnInit {
+  votantes= ['Narco', 'Celeritas', 'Bombasto'];
+  Afavor:number=0;
+  EnContra:number=0;
 
-  empleados: Empleado[]=[
-    new Empleado("Juan", "Diaz","presidente",7500),
-    new Empleado("Juan", "Diaz","presidente",7500),
-    new Empleado("Juan", "Diaz","presidente",7500),
-  ];
+  votar(respuesta:boolean){
+        if(respuesta){
+      this.Afavor++;
+    }else{
+      this.EnContra++;
+    }
 
-  cuadroNombre: string="";
-  cuadroApellido: string="";
-  cuadroCargo: string="";
-  cuadroSalario: number=0;
+  }
 
-agregarEmpleado(){
-  let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-  this.empleados.push(miEmpleado);
-}
+
   constructor() {
 
   }

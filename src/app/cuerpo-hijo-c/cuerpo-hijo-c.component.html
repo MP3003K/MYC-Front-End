@@ -1,11 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-        {{indice+1}}
-        {{empleadoDeLista.nombre}}
-        {{empleadoDeLista.apellido}}
-        {{empleadoDeLista.cargo}}
-        {{empleadoDeLista.salario}}
-    </div>
+
+<br>
+Votante:   {{Hvotante}}
+<br>
+<br>
+
+<div class="container m-5 flex">
+  <div class=" h-8 w-10 bg-red-600 items-center  cursor-pointer" (click)="votar(false)">
+    <div class="text-center pt-1">No</div>
+  </div>
+  <div class="w-2"></div>
+  <div class=" h-8 w-10 bg-green-500 items-center  cursor-pointer" (click)="votar(true)">
+    <div class="text-center pt-1">Si</div>
   </div>
 </div>
+
+
