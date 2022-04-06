@@ -1,28 +1,39 @@
-<section class="flex m-3">
-  <div class="m-2 bg-slate-400 rounded-md w-60 h-96 ">
 
-  </div>
+<div class="container">
+        <form >
+          <br>
+<label for="nombre">Nombre:</label>
+<input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="cuadroNombre">
+<br>
 
-  <div class="m-2 bg-slate-400 rounded-md w-60 h-96">
-    <div> {{titulo}}</div>
+<label for="apellido">Apellido:</label>
+<input type="text" name="apellido" id="apellido" placeholder="Apellido" [(ngModel)]="cuadroApellido">
+<br>
 
-    <form action="">
-      <input type="text" name="nombre" [(ngModel)]="nombre"><br />
-      <input type="text" name="apellido" [(ngModel)]="apellido"><br />
+<label for="cargo">Cargo:</label>
+<input type="text" name="cargo" id="cargo" placeholder="Cargo" [(ngModel)]="cuadroCargo">
+<br>
 
-      <div (click)="registarUsuarios()" value="Registrar"
-        class="bg-cyan-500 cursor-pointer w-16 h-5 rounder rounded-r-md"> registrar</div>
-    </form>
-    <p *ngIf="registrado;else sinregistrar" >{{mensaje}} con el nombre de {{nombre}} {{apellido}}</p>
-    <ng-template #sinregistrar>
-      <p>nadie registrado</p>
-    </ng-template>
+<label for="salario">Salario:</label>
+<input type="text" name="salario" id="salario" placeholder="Salario" [(ngModel)]="cuadroSalario">
 
+</form>
 <br>
 <br>
-<ul>
-  <li *ngFor="let entrada of entradas">{{entrada.titulo}}</li>
-</ul>
-  </div>
+<button type="submit" value="" (click)="agregarEmpleado()">
+  agregar
+</button>
 
-</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let empleado of empleados">
+        {{empleado.nombre}}
+        {{empleado.apellido}}
+        {{empleado.cargo}}
+        {{empleado.salario}}
+      </div>
+    </div>
+  </div>
+</div>

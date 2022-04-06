@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Empleado } from './persona.model';
 
 @Component({
   selector: 'app-cuerpo',
@@ -6,29 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cuerpo.component.css']
 })
 export class CuerpoComponent implements OnInit {
-// * valores
-titulo= 'Registro de Usuarios';
-mensaje='mensaje';
-registrado=false;
-nombre:string="";
-apellido:string="";
-entradas: any;
-// *  funciones
 
-registarUsuarios(){
-  this.registrado=true;
-  this.mensaje="Registrado con exito";
+  empleados: Empleado[]=[
+    new Empleado("Juan", "Diaz","presidente",7500),
+    new Empleado("Juan", "Diaz","presidente",7500),
+    new Empleado("Juan", "Diaz","presidente",7500),
+  ];
+
+  cuadroNombre: string="";
+  cuadroApellido: string="";
+  cuadroCargo: string="";
+  cuadroSalario: number=0;
+
+agregarEmpleado(){
+  let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+  this.empleados.push(miEmpleado);
 }
+  constructor() {
 
-constructor() {
-  this.entradas=[
-    {titulo:"Java cada dia mas presente"},
-    {titulo:"Pyton cada dia mas presente"},
-    {titulo:"JavaScrip cada dia mas presente"},
-    {titulo:"LetGo cada dia mas presente"},
-  ]
-}
-
+  }
   ngOnInit(): void {
   }
 
