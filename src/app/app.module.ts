@@ -11,6 +11,7 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { BarraSuperiorComponent } from './barra-superior/barra-superior.component';
 import { CuerpoComponent } from './cuerpo/cuerpo.component';
 import { FormsModule } from '@angular/forms';
+import { CuerpoHijoCComponent } from './cuerpo-hijo-c/cuerpo-hijo-c.component';
 
 // Fin Service
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     BarraLateralComponent,
     BarraSuperiorComponent,
-    CuerpoComponent
+    CuerpoComponent,
+    CuerpoHijoCComponent
   ],
   imports: [
     BrowserModule,
